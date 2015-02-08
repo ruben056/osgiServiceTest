@@ -9,7 +9,7 @@ This is not exported but is made available using using OSGI Service Registry to 
 
 Notes
 -----
-* The whole idea here is that there is no runtime dependency on the bundle containing the implmentation. The only requirements to trigger the service are
+* The idea is that there is no no coupling between the bundle containing the implementation and the other bundles consuming the service. The only requirements to trigger the service are
 - public api must be available to the consumer (consumer has dependency on public api)
 - at least one bundle who provides an implementation and 'links' it to the public api via the OSGI registry.
 * Important!! Make sure the bundles containing the public api and the provider are started BEFORE the consumer! If not the consumer might get a null for the service because it was not registered yet ... . You can set the run level of the consuming bundle higher then that of the other 2 bundles to solve this problem.
